@@ -35,32 +35,39 @@ public class Main {
 //        Get the Guess from the user
         int guessedNumber;
 
+
 //        Try/Catch to check for invalid user input
-        try {
+            try {
 //            Do/while will loop through guesses until correct guess given
-            do {
-                System.out.println("Guess a number between 1 and 100");
-                guessedNumber = input.nextInt();
-                System.out.println("You guessed the number " + guessedNumber);
+                do {
+
+                    System.out.println("Guess a number between 1 and 100");
+                    guessedNumber = input.nextInt();
+                    System.out.println("You guessed the number " + guessedNumber);
 
 //        Compare the Guess to the Random Number
-            if (randomNumber > guessedNumber) {
-                System.out.println("Your guess is too low. Guess higher.");
-                numberOfGuessess++;
-                System.out.println("You have made " + numberOfGuessess + " guesses.");
-            } else if (randomNumber < guessedNumber) {
-                System.out.println("Your guess is too high. Guess lower.");
-                numberOfGuessess++;
-                System.out.println("You have made " + numberOfGuessess + " guesses.");
-            } else {
-                System.out.println("Congratulations! You guessed my number " + randomNumber + " in " + numberOfGuessess + " tries!!!");
-            }
+                    if (randomNumber > guessedNumber) {
+                        System.out.println("Your guess is too low. Guess higher.");
+                        numberOfGuessess++;
+                        System.out.println("You have made " + numberOfGuessess + " guesses.");
+                    } else if (randomNumber < guessedNumber) {
+                        System.out.println("Your guess is too high. Guess lower.");
+                        numberOfGuessess++;
+                        System.out.println("You have made " + numberOfGuessess + " guesses.");
+                    } else {
+                        System.out.println("Congratulations! You guessed my number " + randomNumber + " in " + numberOfGuessess + " tries!!!");
+                    }
 
-        } while (randomNumber != guessedNumber);
+                } while (randomNumber != guessedNumber && numberOfGuessess < MAX_GUESS_COUNT);
 
             } catch (Exception e) {
                 System.out.println("Please enter a n actual number");
             }
+
+
+
+
+
 
 //        HOW TO GET A USABLE RANDOM NUMBER
 //        double randomNumber;
@@ -80,6 +87,5 @@ public class Main {
 //        System.out.println("The Rounded that we're used to: " + randomNumberRoundedNormally);
 
 
-
+        }
     }
-}
