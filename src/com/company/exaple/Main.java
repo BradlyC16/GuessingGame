@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
 //        Initialize our scanner, so we can take input from the user
         Scanner input = new Scanner(System.in);
@@ -29,18 +29,25 @@ public class Main {
 
 //        Get the Guess from the user
         int guessedNumber;
-        System.out.println("Guess a number between 1 and 100");
-        guessedNumber = input.nextInt();
-        System.out.println("You guessed the number " + guessedNumber);
+
+
+        do {
+            System.out.println("Guess a number between 1 and 100");
+            guessedNumber = input.nextInt();
+            System.out.println("You guessed the number " + guessedNumber);
 
 //        Compare the Guess to the Random Number
-        if (randomNumber > guessedNumber) {
-            System.out.println("Your guess is too low. Guess higher.");
-        } else if (randomNumber < guessedNumber) {
-            System.out.println("Your guess is too high. Guess lower.");
-        } else {
-            System.out.println("Congratulations! You guessed my number " + randomNumber + "!!!");
-        }
+            if (randomNumber > guessedNumber) {
+                System.out.println("Your guess is too low. Guess higher.");
+            } else if (randomNumber < guessedNumber) {
+                System.out.println("Your guess is too high. Guess lower.");
+            } else {
+                System.out.println("Congratulations! You guessed my number " + randomNumber + "!!!");
+            }
+        } while (randomNumber != guessedNumber);
+
+
+
 
 
 
