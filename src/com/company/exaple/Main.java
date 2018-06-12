@@ -1,11 +1,27 @@
 package com.company.exaple;
 
+/*
+Give instructions
+Pick the random number
+Get guess from user
+Compare the guess to the number
+  Notify user of higher or lower ... and guess again
+  OR ... that they won, do they want to play again?
+ */
+
+
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
 
+//        Give Instructions
+        System.out.println("Welcome to the Guessing Game! I'm thinking of a number between 1 and 100. Can you figure it out?");
 
+//        Pick the Random Number
+        int randomNumber = (int) Math.ceil(Math.random() * 100);
+        System.out.println(randomNumber);
 
 
 
