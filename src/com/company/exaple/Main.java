@@ -20,6 +20,11 @@ public class Main {
 //        Initialize our scanner, so we can take input from the user
         Scanner input = new Scanner(System.in);
 
+//        Set number of guesses
+        int numberOfGuessess = 0;
+        final int MAX_GUESS_COUNT = 4;
+
+
 //        Give Instructions
         System.out.println("Welcome to the Guessing Game! I'm thinking of a number between 1 and 100. Can you figure it out?");
 
@@ -30,26 +35,32 @@ public class Main {
 //        Get the Guess from the user
         int guessedNumber;
 
-
-        do {
-            System.out.println("Guess a number between 1 and 100");
-            guessedNumber = input.nextInt();
-            System.out.println("You guessed the number " + guessedNumber);
+//        Try/Catch to check for invalid user input
+        try {
+//            Do/while will loop through guesses until correct guess given
+            do {
+                System.out.println("Guess a number between 1 and 100");
+                guessedNumber = input.nextInt();
+                System.out.println("You guessed the number " + guessedNumber);
 
 //        Compare the Guess to the Random Number
             if (randomNumber > guessedNumber) {
                 System.out.println("Your guess is too low. Guess higher.");
+                numberOfGuessess++;
+                System.out.println("You have made " + numberOfGuessess + " guesses.");
             } else if (randomNumber < guessedNumber) {
                 System.out.println("Your guess is too high. Guess lower.");
+                numberOfGuessess++;
+                System.out.println("You have made " + numberOfGuessess + " guesses.");
             } else {
-                System.out.println("Congratulations! You guessed my number " + randomNumber + "!!!");
+                System.out.println("Congratulations! You guessed my number " + randomNumber + " in " + numberOfGuessess + " tries!!!");
             }
+
         } while (randomNumber != guessedNumber);
 
-
-
-
-
+            } catch (Exception e) {
+                System.out.println("Please enter a n actual number");
+            }
 
 //        HOW TO GET A USABLE RANDOM NUMBER
 //        double randomNumber;
